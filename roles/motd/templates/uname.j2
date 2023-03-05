@@ -1,0 +1,6 @@
+#!/bin/sh
+# {{ ansible_managed }}
+# uname -snrvm
+# uname -s
+uname -n
+lsb_release -d | sed -e 's/Description:[[:space:]]//g'

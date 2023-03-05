@@ -1,0 +1,17 @@
+---
+# This playbook deploys the entire setup for the Raspberry Pi host
+- hosts: derek
+  # collections:
+  #   - community.general
+  vars_files:
+    - secrets.yml
+  roles:
+    - {role: 'common', tags: 'common'}
+    - {role: 'motd', tags: 'motd'}
+    - {role: 'yatesr.timezone', tags: 'timezone'}
+    # - {role: 'sshd', tags: 'sshd'}
+    # - {role: 'volumes', tags: 'volumes'}
+    # - {role: 'users', tags: 'users'}
+    # - {role: 'bind', tags: 'bind'}
+    # - {role: 'web', tags: 'web'}
+    # - {role: 'mariadb', tags: 'mariadb'}

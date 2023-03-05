@@ -1,0 +1,20 @@
+# FIGlet
+---
+- name: Ensure Figlet is at the latest version
+  apt:
+    name: figlet
+    state: latest
+- name: Ensure TOIlet is at the latest version
+  apt:
+    name: toilet
+    state: latest
+- name: Set MOTD to hostname
+  shell: >
+    hostname -s | toilet -f slant --filter metal > /etc/motd
+- name: Configure update MOTD
+  template:
+    src: uname.j2
+    dest: "/etc/update-motd.d/10-uname"
+    owner: root
+    group: root
+    mode: 0755
