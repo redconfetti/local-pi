@@ -26,4 +26,5 @@ Alternatively you can run a specific role if you specify it by a tag
 ```bash
 ansible-playbook playbook.yml --tags "common"
 ansible-playbook playbook.yml --tags "motd"
+ansible-playbook playbook.yml --tags "docker"
 ```
