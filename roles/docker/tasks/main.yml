@@ -62,3 +62,9 @@
   ansible.builtin.group:
     name: docker
     state: present
+- name: Add user to docker group
+  ansible.builtin.user:
+    name: "{{remote_user}}"
+    shell: /bin/bash
+    groups: docker
+    append: yes
